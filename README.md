@@ -4,6 +4,22 @@
 
 This project focuses on detecting network intrusions using machine learning techniques. The dataset consists of a variety of simulated intrusions in a military network environment. The primary goal is to identify normal and anomalous connections, leveraging Random Forest classification for anomaly detection.
 
+### Quality Issues:
+
+- Highly imbalanced dataset (most connections are normal).
+- Categorical features (e.g., protocol type) may require encoding.
+
+Cleaning/Transformation:
+- Apply oversampling (e.g., SMOTE) for anomalies.
+- Encode categorical features and scale numerical ones.
+
+Model Evaluation:
+- Focus on precision to minimize false positives in anomaly detection.
+- Use confusion matrix and AUC-PR for evaluation.
+
+Dataset Limitations:
+- Simulated dataset may not reflect real-world network conditions.
+
 ### Dataset
 
 The dataset includes:
