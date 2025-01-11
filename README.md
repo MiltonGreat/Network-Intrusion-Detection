@@ -1,24 +1,8 @@
-# Network-Intrusion-Detection
+# Anomaly Detection Model
 
 ### Overview
 
-This project focuses on detecting network intrusions using machine learning techniques. The dataset consists of a variety of simulated intrusions in a military network environment. The primary goal is to identify normal and anomalous connections, leveraging Random Forest classification for anomaly detection.
-
-### Quality Issues:
-
-- Highly imbalanced dataset (most connections are normal).
-- Categorical features (e.g., protocol type) may require encoding.
-
-Cleaning/Transformation:
-- Apply oversampling (e.g., SMOTE) for anomalies.
-- Encode categorical features and scale numerical ones.
-
-Model Evaluation:
-- Focus on precision to minimize false positives in anomaly detection.
-- Use confusion matrix and AUC-PR for evaluation.
-
-Dataset Limitations:
-- Simulated dataset may not reflect real-world network conditions.
+This repository contains the implementation of a machine learning model designed to detect anomalies in a given dataset. The model is particularly useful in scenarios such as fraud detection, network security monitoring, and identifying irregular patterns in customer behavior.
 
 ### Dataset
 
@@ -38,24 +22,19 @@ Each connection record consists of 41 features (38 quantitative and 3 qualitativ
 - 0: Normal
 - 1: Anomalous
 
-### Project Workflow
+## Model Workflow:
 
-##### Data Preprocessing
-- Handled missing values and duplicates.
-- Encoded categorical features using one-hot encoding.
-- Standardized numerical features using StandardScaler.
-
-##### Exploratory Data Analysis (EDA)
-- Visualized the class distribution.
-- Analyzed correlations to select the most relevant features.
-
-##### Feature Selection
-- Retained features with correlations above a threshold of 0.1.
-- Used one-hot encoding for categorical variables and scaled numeric features.
-
-##### Model Building
-- Trained a Random Forest classifier to distinguish between normal and anomalous connections.
-- Split the data into training and validation sets (70/30 split).
+1. **Data Preprocessing**:
+   - Non-numeric columns are encoded using label encoding.
+   - Categorical features are one-hot encoded.
+   - Feature scaling is applied for standardization.
+   
+2. **Modeling**:
+   - Random Forest Classifier is used for anomaly detection.
+   - SMOTE (Synthetic Minority Over-sampling Technique) is applied to balance the dataset and prevent model bias toward the majority class.
+   
+3. **Evaluation**:
+   - The model is evaluated using precision and AUC-PR scores to measure its ability to correctly identify anomalies.
 
 ### Key Results
 
